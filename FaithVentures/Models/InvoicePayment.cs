@@ -5,72 +5,72 @@ namespace FaithVentures.Models {
     public class InvoicePayment {
         // "type": "CREDIT_CARD",
         [JsonProperty("type")]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         // "cardVendor": "CA",
         [JsonProperty("cardVendor")]
-        public string cardVendor { get; set; }
+        public string CardVendor { get; set; }
 
         // "cardLastFourDigits": "4508",
         [JsonProperty("cardLastFourDigits")]
-        public string cardLastFourDigits { get; set; }
+        public string CardLastFourDigits { get; set; }
 
         // "cardExpirationMonth": "04",
         [JsonProperty("cardExpirationMonth")]
-        public string cardExpirationMonth { get; set; }
+        public string CardExpirationMonth { get; set; }
 
         // "cardExpirationYear": "24",
         [JsonProperty("cardExpirationYear")]
-        public string cardExpirationYear { get; set; }
+        public string CardExpirationYear { get; set; }
 
         // "billingFirstName": "Archie",
         [JsonProperty("billingFirstName")]
-        public string billingFirstName { get; set; }
+        public string BillingFirstName { get; set; }
 
         // "billingMiddleName": "",
         [JsonProperty("billingMiddleName")]
-        public string billingMiddleName { get; set; }
+        public string BillingMiddleName { get; set; }
 
         // "billingLastName": "Smith",
         [JsonProperty("billingLastName")]
-        public string billingLastName { get; set; }
+        public string BillingLastName { get; set; }
 
         // "billingName": null,
         [JsonProperty("billingName")]
-        public string billingName { get; set; }
+        public string BillingName { get; set; }
 
         // "billingAddress1": "123 Main Street",
         [JsonProperty("billingAddress1")]
-        public string billingAddress1 { get; set; }
+        public string BillingAddress1 { get; set; }
 
         // "billingAddress2": "",
         [JsonProperty("billingAddress2")]
-        public string billingAddress2 { get; set; }
+        public string BillingAddress2 { get; set; }
 
         // "billingCity": "Dallas",
         [JsonProperty("billingCity")]
-        public string billingCity { get; set; }
+        public string BillingCity { get; set; }
 
         // "billingStateCode": "TX",
         [JsonProperty("billingStateCode")]
-        public string billingStateCode { get; set; }
+        public string BillingStateCode { get; set; }
 
         // "billingPostalCode": "77777",
         [JsonProperty("billingPostalCode")]
-        public string billingPostalCode { get; set; }
+        public string BillingPostalCode { get; set; }
 
         // "billingCountryCode": "US",
         [JsonProperty("billingCountryCode")]
-        public string billingCountryCode { get; set; }
+        public string BillingCountryCode { get; set; }
 
         [JsonProperty("dateCreated")]
-        public FaithVenturesDate dateCreated { get; set; }
+        public FaithVenturesDate DateCreated { get; set; }
 
         [JsonProperty("dateUpdated")]
-        public FaithVenturesDate dateUpdated { get; set; }
+        public FaithVenturesDate DateUpdated { get; set; }
 
         // "dateCheckReceived": null
         [JsonProperty("dateCheckReceived")]
-        public FaithVenturesDate dateCheckReceived { get; set; }
+        public FaithVenturesDate DateCheckReceived { get; set; }
     }
 }

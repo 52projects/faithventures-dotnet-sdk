@@ -125,6 +125,9 @@ namespace FaithVentures.Models {
         [JsonProperty("dateEffectiveEnd")]
         public FaithVenturesDate DateEffectiveEnd { get; set; }
 
+        [JsonProperty("productCoverages")]
+        public List<ProductCoverage> ProductCoverages { get; set; }
+
         public bool IsBasic() {
             return ProductType.ToUpper() == "BASIC";
         }

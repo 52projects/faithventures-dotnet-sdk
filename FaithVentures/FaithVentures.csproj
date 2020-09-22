@@ -59,6 +59,7 @@
     <Compile Include="FaithVenturesClient.cs" />
     <Compile Include="FaithVenturesOptions.cs" />
     <Compile Include="Models\IFaithVenturesSearchResponse.cs" />
+    <Compile Include="Models\ProductCoverages.cs" />
     <Compile Include="Models\PolicySearchResponse.cs" />
     <Compile Include="Models\FaithVenturesDate.cs" />
     <Compile Include="Models\InvoicePayment.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaithVentures.Models;
+using System;
 
 namespace FaithVentures.Entity {
     [Serializable]
@@ -11,5 +12,11 @@ namespace FaithVentures.Entity {
         public int MissionId { get; set; }
         public bool IsBasic { get; set; }
         public bool IsActive { get; set; }
+
+        public void UpdateFromPolicy(Policy policy) {
+            StartDateTime = policy.DateEffectiveStart.ToDateTime();
+            EndDateTime = policy.DateEffectiveEnd.ToDateTime();
+            IsBasic = policy.IsBasic();
+        }
     }
 }
