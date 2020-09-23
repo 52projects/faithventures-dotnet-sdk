@@ -19,7 +19,9 @@ namespace FaithVentures.Sets {
                 string json = JsonConvert.SerializeObject(entity);
                 json = json.Replace("False", "false").Replace("True", "true");
                 var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await http.PostAsync(url, httpContent);
+                var task = http.PostAsync(url, httpContent);
+                Task.WaitAll(task);
+                var response = task.Result;
                 return await ConvertResponseAsync<T>(response);
             }
         }
