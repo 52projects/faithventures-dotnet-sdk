@@ -83,9 +83,9 @@ namespace FaithVentures.Models {
         [JsonProperty("productInsuranceTollFreePhone")]
         public string ProductInsuranceTollFreePhone { get; set; }
 
-        // "productInsuranceLocalPhone": null,
-        [JsonProperty("productInsuranceLocalPhone")]
-        public string ProductInsuranceLocalPhone { get; set; }
+        // "productInsurancePhone": "00 1.443.275.6001",
+        [JsonProperty("productInsurancePhone")]
+        public string ProductInsurancePhone { get; set; }
 
         // "productLocalPhone": null,
         [JsonProperty("productLocalPhone")]
