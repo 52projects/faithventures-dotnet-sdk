@@ -22,5 +22,15 @@ namespace FaithVentures.Sets {
             }
             return await base.PostAsync($"/wpcc/api/1.0/search/expeditions", searchObject);
         }
+
+        public async Task<IFaithVenturesSearchResponse<Expedition>> LinkOrderAsync(string personID, string orderNumber, string lastName, string role) {
+            var searchObject = new Dictionary<string, string> {
+                { "orderNumber", orderNumber },
+                { "orderLastName", lastName },
+                { "externalPersonId", personID },
+                { "externalPersonRole", role }
+            };
+            return await base.PostAsync($"/wpcc/api/1.0/grant-api-access-to-expedition", searchObject);
+        }
     }
 }

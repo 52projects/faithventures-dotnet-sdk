@@ -6,6 +6,8 @@ namespace FaithVentures.Services {
 
         Task<Models.IFaithVenturesSearchResponse<Models.Expedition>> GetFaithVenturesExpeditionsAsync(string personID);
 
+        Task<Models.IFaithVenturesSearchResponse<Models.Expedition>> LinkOrderAsync(string personID, string orderNumber, string lastName, string role);
+
         Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPolicyAsync(string policyID);
     }
 
@@ -22,6 +24,10 @@ namespace FaithVentures.Services {
 
         public async Task<Models.IFaithVenturesSearchResponse<Models.Expedition>> GetFaithVenturesExpeditionsAsync(string personID) {
             return await _client.Expeditions.GetExpeditionsAsync(personID);
+        }
+
+        public async Task<Models.IFaithVenturesSearchResponse<Models.Expedition>> LinkOrderAsync(string personID, string orderNumber, string lastName, string role) {
+            return await _client.Expeditions.LinkOrderAsync(personID, orderNumber, lastName, role);
         }
 
         public async Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPolicyAsync(string policyID) {
