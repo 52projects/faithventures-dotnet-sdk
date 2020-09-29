@@ -20,7 +20,7 @@ namespace FaithVentures.Models {
         public int MaxNumberOfItemsPerPage { get; set; }
 
         [JsonProperty("originalRequest")]
-        public Dictionary<string, string> OriginalRequest { get; set; }
+        public Dictionary<string, dynamic> OriginalRequest { get; set; }
     }
 
     public class ExpeditionSearchResponse<Expedition> : ExpeditionSearchResponse, IFaithVenturesSearchResponse<Expedition> where Expedition : new() {

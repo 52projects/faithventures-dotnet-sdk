@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FaithVentures.Services {
     public interface IFaithVenturesService {
@@ -9,6 +10,8 @@ namespace FaithVentures.Services {
         Task<Models.IFaithVenturesSearchResponse<Models.Expedition>> LinkOrderAsync(string personID, string orderNumber, string lastName, string role);
 
         Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPolicyAsync(string policyID);
+
+        Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPoliciesAsync(List<string> policyIDs);
     }
 
     public class FaithVenturesService : IFaithVenturesService {
@@ -32,6 +35,10 @@ namespace FaithVentures.Services {
 
         public async Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPolicyAsync(string policyID) {
             return await _client.Policies.GetPolicyAsync(policyID);
+        }
+
+        public async Task<Models.IFaithVenturesSearchResponse<Models.Policy>> GetFaithVenturesPoliciesAsync(List<string> policyIDs) {
+            return await _client.Policies.GetPoliciesAsync(policyIDs);
         }
     }
 }

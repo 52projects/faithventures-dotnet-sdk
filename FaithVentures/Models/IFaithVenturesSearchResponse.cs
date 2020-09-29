@@ -11,7 +11,7 @@ namespace FaithVentures.Models {
 
         int MaxNumberOfItemsPerPage { get; set; }
 
-        Dictionary<string, string> OriginalRequest { get; set; }
+        Dictionary<string, dynamic> OriginalRequest { get; set; }
     }
 
     public interface IFaithVenturesSearchResponse<T> : IFaithVenturesSearchResponse {
@@ -35,7 +35,7 @@ namespace FaithVentures.Models {
         public int MaxNumberOfItemsPerPage { get; set; }
 
         [JsonProperty("originalRequest")]
-        public Dictionary<string, string> OriginalRequest { get; set; }
+        public Dictionary<string, dynamic> OriginalRequest { get; set; }
     }
 
     public class FaithVenturesSearchResponse<T> : FaithVenturesSearchResponse, IFaithVenturesSearchResponse<T> where T : new() {
