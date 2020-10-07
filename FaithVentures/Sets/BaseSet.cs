@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using FaithVentures.Models;
+using FiftytwoProjects.Core.Extensions;
 using Newtonsoft.Json;
 
 namespace FaithVentures.Sets {
@@ -32,8 +33,11 @@ namespace FaithVentures.Sets {
             httpClient.BaseAddress = new Uri(_options.ApiUrl);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("BASIC",
-                Convert.ToBase64String(Encoding.ASCII.GetBytes(_options.ApiAuthUsername + ":" + _options.ApiAuthPassword)));
+
+            if (_options.ApiAuthUsername.HasValue()) {
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("BASIC",
+                    Convert.ToBase64String(Encoding.ASCII.GetBytes(_options.ApiAuthUsername + ":" + _options.ApiAuthPassword)));
+            }
             httpClient.DefaultRequestHeaders.Add("API-Token-Public-Key", _options.ApiTokenPublicKey);
             httpClient.DefaultRequestHeaders.Add("API-Token-Private-Key", _options.ApiTokenPrivateKey);
             return httpClient;
