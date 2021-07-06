@@ -14,8 +14,8 @@ namespace FaithVentures.Entity {
         public bool IsActive { get; set; }
 
         public void UpdateFromPolicy(Policy policy) {
-            StartDateTime = policy.DateEffectiveStart.ToDateTime();
-            EndDateTime = policy.DateEffectiveEnd.ToDateTime();
+            StartDateTime = policy.DateEffectiveStart.ToDateTime().Value;
+            EndDateTime = policy.DateEffectiveEnd.ToDateTime().Value;
             IsBasic = policy.IsBasic();
         }
     }

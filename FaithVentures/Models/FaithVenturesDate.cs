@@ -13,8 +13,12 @@ namespace FaithVentures.Models {
         [JsonProperty("timezone")]
         public string Timezone { get; set; }
 
-        public DateTime ToDateTime() {
-            return DateTime.Parse(this.Date, new CultureInfo("en-US"), DateTimeStyles.AssumeUniversal);
+        public DateTime? ToDateTime() {
+            if (DateTime.TryParse(this.Date, new CultureInfo("en-US"), DateTimeStyles.AssumeUniversal, out var date)) {
+                return date;
+            }
+
+            return null;
         }
     }
 }

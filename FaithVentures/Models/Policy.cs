@@ -117,7 +117,7 @@ namespace FaithVentures.Models {
 
         // "travelerDateOfBirth": null,
         [JsonProperty("travelerDateOfBirth")]
-        public string TravelerDateOfBirth { get; set; }
+        public FaithVenturesDate TravelerDateOfBirth { get; set; }
 
         [JsonProperty("dateEffectiveStart")]
         public FaithVenturesDate DateEffectiveStart { get; set; }

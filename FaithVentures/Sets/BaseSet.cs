@@ -48,7 +48,8 @@ namespace FaithVentures.Sets {
 
                 if ((int)response.StatusCode == 200) {
                     try {
-                        faithVenturesResponse = JsonConvert.DeserializeObject<FaithVenturesSearchResponse<S>>(await response.Content.ReadAsStringAsync());
+                        var responseBody = await response.Content.ReadAsStringAsync();
+                        faithVenturesResponse = JsonConvert.DeserializeObject<FaithVenturesSearchResponse<S>>(responseBody);
                     }
                     catch (Exception e) {
                         throw;
